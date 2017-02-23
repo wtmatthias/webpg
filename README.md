@@ -1,20 +1,9 @@
-Update (2017/02/06): if you are interested in building a website using R Markdown, I strongly recommend you to take a look at the [**blogdown**](https://github.com/rstudio/blogdown) package. The method introduced in this repo still works, but **blogdown** is much more powerful thanks to Hugo and Pandoc.
+# wtmatthias.github.io
 
----
 
-This is a minimal example of a Jekyll-based website using **knitr** and R
-Markdown. The interesting bit of this repo is that you can actually serve the
-Jekyll website locally with R, and R Markdown posts can be compiled
-automatically, with the web pages automatically refreshed as well.
 
-After you are satisfied with the local preview, you can either just push the
-Markdown blog posts to your Github repo (e.g. the `gh-pages` branch), and let
-Github generate the website for you, or host the HTML files generated under the
-`_site/` directory on your own server.
+Note: Created from @yihui 'knitr-jekyll' underneath all of this before customized theme, etc. The additional code (R, Makefile) in this repo is under the MIT License, and the [blog post](http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html) about the "knitr-jekyll" project written by @yihui was written under the [CC-BY 4.0 (http://creativecommons.org/licenses/by/4.0/) International License.
 
-The original website was created from `jekyll new .` under the root directory,
-which was part of the [official Jekyll repo](https://github.com/jekyll/jekyll).
-The additional code (R, Makefile) in this repo is under the MIT License, and the
-[blog post](http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html) I
-wrote is under the [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/)
-International License.
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
