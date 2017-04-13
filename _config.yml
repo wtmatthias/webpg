@@ -93,6 +93,10 @@ show-author: true
 # do you want some animations?
 animation: true
 
+markdown: kramdown
+
+highlighter: rouge
+
 gems:
   - jekyll-seo-tag
   - jekyll-gist
@@ -111,6 +115,6 @@ jekyll-mentions:
   - jekyll-paginate
 
 jekyll-mentions:
-    base_url: https://github.com
+    base_url: http://wtmatthias.com
 
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, Rakefile, screen-shot.png, travis.sh]
