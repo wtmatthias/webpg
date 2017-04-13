@@ -3,7 +3,7 @@ name: William Matthias
 bio: PhD Student at University of Texas at Austin
 
 # twitter summary info
-description: A blog about technology and stuff related
+description: personal tweets
 
 # if it's an external image, update below for true
 # better with square images
@@ -100,3 +100,17 @@ gems:
 
 jekyll-mentions:
     base_url: https://github.com
+
+    gems:
+  - jemoji
+  - jekyll-mentions
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-paginate
+
+jekyll-mentions:
+    base_url: https://github.com
+
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, Rakefile, screen-shot.png, travis.sh]
