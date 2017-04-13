@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+_site/
+.sass-cache/
+.DS_store
+node_modules
+.npm-debug.log
