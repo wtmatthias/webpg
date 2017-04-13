@@ -12,9 +12,9 @@ picture: assets/images/profile.jpg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
- resume: true
- resume-external: false
- resume-url: william-matthias.weebly.com
+resume: true
+resume-external: false
+resume-url: william-matthias.weebly.com
 
 url: http://wtmatthias.com
 # your url: http://USERNAME.github.io
@@ -34,7 +34,7 @@ disqus:
   categories: # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-#facebook: myfacebook
+# facebook: myfacebook
 twitter: https://twitter.com/wtmatthias
 # google: mygoogle
 # instagram: myinstagram
@@ -51,7 +51,7 @@ twitter: https://twitter.com/wtmatthias
 # vimeo: myvimeo
 email: bmatthias@utexas.edu
 
- authors:
+authors:
         name: William Matthias
         bio: PhD Student at UT-Austin
         external-image: false
@@ -98,14 +98,6 @@ markdown: kramdown
 highlighter: rouge
 
 gems:
-  - jekyll-seo-tag
-  - jekyll-gist
-  - jekyll-feed
-
-jekyll-mentions:
-    base_url: https://github.com
-
-    gems:
   - jemoji
   - jekyll-mentions
   - jekyll-seo-tag
@@ -117,4 +109,4 @@ jekyll-mentions:
 jekyll-mentions:
     base_url: http://wtmatthias.com
 
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, Rakefile, screen-shot.png, travis.sh]
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, Rakefile, screen-shot.png, travis.sh, tasks]
