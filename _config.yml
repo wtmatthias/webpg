@@ -1,6 +1,6 @@
 # main text of home
-name: Arti Annaswamy
-bio: 'Data analytics, process improvement, project management, coffee drinking'
+name: William Matthias
+bio: 'PhD Student at University of Texas - Austin'
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -10,7 +10,7 @@ description: A blog about technology and stuff related
 external-image: false
 picture: 'assets/images/profile.jpg'
 
-url: http://artiannaswamy.com
+url: http://wtmatthias.com
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
@@ -19,31 +19,31 @@ markdown: kramdown
 highlighter: rouge
 
 # To enable google analytics, supply your token below
-analytics-google: 'UA-74313908-1'
+# analytics-google:
 
 # if you don't want comments in your posts, set to false
-disqus: artiannaswamy
+disqus:
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
-twitter: aannasw
+twitter: https://twitter.com/wtmatthias
 # google: mygoogle
 # instagram: myinstagram
-pinterest: annasw
-linkedin: artiannaswamy
+# pinterest:
+# linkedin: 
 # youtube: myyoutube
 # spotify: myspotify
-github: aannasw
+# github: 
 # medium: medium
-email: hello@artiannaswamy.com
+email: b.matthias@utexas.edu
 
 authors:
-    artiannaswamy:
-        name: Arti Annaswamy
-        bio: Data analytics, process improvement, project management, coffee drinking
+    wtmatthias:
+        name: William Matthias
+        bio: PhD student at UT-Austin
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: aannasw
+        twitter: wtmatthias
 
 
 # do you want a larger site? change the option below
@@ -94,6 +94,6 @@ gems:
   - jekyll-paginate
 
 jekyll-mentions:
-    base_url: http://artiannaswamy.com
+    base_url: http://wtmatthias.com
 
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, indigo-gh-pages.zip, Rakefile, screen-shot.png, travis.sh, tasks]
