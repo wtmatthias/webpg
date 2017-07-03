@@ -7,4 +7,4 @@ Based on the [Indigo Minimalist Jekyll Template](https://github.com/sergiokoppli
 
 ## License
 
-[MIT](http://kopplin.mit-license.org/) License © Sérgio Kopplin
+[MIT](http://kopplin.mit-license.org/) License © William Matthias
