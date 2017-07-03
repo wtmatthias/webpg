@@ -26,11 +26,11 @@ disqus:
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
-twitter: https://twitter.com/wtmatthias
+twitter: wtmatthias
 # google: mygoogle
-# instagram: myinstagram
+instagram: wtmatthias
 # pinterest:
-# linkedin: 
+linkedin: william-matthias-668b1471
 # youtube: myyoutube
 # spotify: myspotify
 github: wtmatthias
@@ -56,7 +56,7 @@ width: large
 # paginate_path: "blog/:num/"
 
 # if you don't need projects, comment the *projects* configs below
-# projects: true
+projects: true
 
 # if you don't need about or blog, comment them out below
 about: true
@@ -72,7 +72,7 @@ show-tags: true
 related: true
 
 # show next & prev links in blog post?
-blog-nav-links: false
+blog-nav-links: true
 
 # show author block at the end of a post ?
 show-author: true
