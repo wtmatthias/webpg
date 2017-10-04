@@ -1,4 +1,4 @@
-## William Matthias's Personal Website 
+## William (Billy) Matthias's Personal Website 
 
 See it here - [wtmatthias.com](http://wtmatthias.com)
 
