@@ -1,6 +1,6 @@
 ## Basic Configuration
 
-baseurl = "https://shenoybr.github.io/hugo-goa-demo/" 
+baseurl = "http://wtmatthias.com/"
 builddrafts = false
 canonifyurls = false
 languageCode = "en-US"
@@ -9,44 +9,44 @@ contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
 
-author = "Erlich Bachman"
-title = "Erlich Bachman"
+author = "William Matthias"
+title = "William Matthias"
 
 theme = "hugo-goa"
 
 ## Hugo Built-in Features
 disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
-googleAnalytics = "XYZ"
+# googleAnalytics = "XYZ"
 enableRobotsTXT = true
+enableEmoji = true
 
 ## Site Settings
 [params]
-author = "Erlich Bachman"
-intro = "Startup Guru Extraordinaire"
-description = "Now @Pied Piper. Previously @Hacker Hostel, @Bachmanity and @Aviato. <br/> \"What is F times 5? It's Fleventy-five.\""
-authorimage = "headshot.jpg"
+author = "William Matthias"
+intro = "Political Science PhD Student"
+#description = "Data . Previously @Hacker Hostel, @Bachmanity and @Aviato.<br/> \"What is F times 5? It's Fleventy-five.\""
+authorimage = "profile.jpg"
 dateformat = "Jan 2, 2006"
 
 ## Site Meta Settings
 [params.meta]
-description = "Simple minimalist theme"
-keywords = "minimalist,blog,goa,hugo,developer"
+description = "conveying info on (mostly) politics and sports using data through programming and visualizations"
+keywords = "politics,sports,development,conflict,R,Python,baseketball,sixers"
 
 ## Social Accounts
 [params.social]
-github = "<username>"
-instagram = "<username>"
-xing = "<username>"
-linkedin = "<username>"
-twitter = "<username>"
-facebook = "<username>"
-google = "<username>"
-stackoverflow = "<username>"
-email = "you@example.com"
+github = "<wtmatthias>"
+instagram = "<wtmatthias>"
+linkedin = "<william-matthias-668b1471>"
+twitter = "<wtmatthias>"
+# facebook = "<username>"
+# google = "<username>"
+# stackoverflow = "<username>"
+email = "b.matthias@utexas.edu"
 
 ## Extras
 [params.extra]
-copyright = "© 2016. Erlich Bachman. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)." 
+copyright = "© 2017. William Matthias. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)."
 poweredby = true
 highlightjs = true
 
@@ -62,7 +62,7 @@ highlightjs = true
     weight = 200
     url = "/about/"
 [[menu.main]]
-    name = "coderag"
-    identifier = "coderag"
+    name = "projects"
+    identifier = "projects"
     weight = 300
-    url = "/coderag/"
+    url = "/projects/"
