@@ -1,10 +1,11 @@
-## William (Billy) Matthias's Personal Website 
+# Blog by William Troy Matthias
 
-See it here - [wtmatthias.com](http://wtmatthias.com)
 
-Based on the [Indigo Minimalist Jekyll Template](https://github.com/sergiokopplin/indigo) by Sérgio Kopplin @sergiokopplin - [Theme Demo](http://sergiokopplin.github.io/indigo/) with major help from [Artianna Swamy](https://github.com/aannasw/aannasw.github.io.git) and her revisions/additions.
+## About
+
+This site is built with help from the [Hugo Goa Theme](https://github.com/shenoybr/hugo-goa) by [@shenoybr](https://github.com/shenoybr) with some changes in style, which are my own.
 
 
 ## License
 
-[MIT](http://kopplin.mit-license.org/) License © William Matthias
+This site is licensed under the [MIT](https://opensource.org/licenses/MIT) License. For more details and information see the [LICENSE](https://raw.githubusercontent.com/wtmatthias/wtmatthias.github.io/master/LICENSE) file.
