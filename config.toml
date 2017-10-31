@@ -1,6 +1,6 @@
 ## Basic Configuration
 
-baseurl = "http://wtmatthias.com/"
+baseurl = "https://wtmatthias.com/"
 builddrafts = false
 canonifyurls = false
 languageCode = "en-US"
@@ -23,7 +23,7 @@ enableEmoji = true
 ## Site Settings
 [params]
 author = "William Matthias"
-intro = "Political Science PhD Student"
+intro = "Data. Politics & Development. Sports. Photography"
 #description = "Data . Previously @Hacker Hostel, @Bachmanity and @Aviato.<br/> \"What is F times 5? It's Fleventy-five.\""
 authorimage = "profile.jpg"
 dateformat = "Jan 2, 2006"
@@ -49,6 +49,7 @@ email = "b.matthias@utexas.edu"
 copyright = "© 2017. William Matthias. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)."
 poweredby = true
 highlightjs = true
+mathjax = true # Add to "footer.html". Not part of orig 'goa' theme
 
 ## Main Menu
 [[menu.main]]

@@ -13,6 +13,15 @@
 hljs.initHighlightingOnLoad();
 </script>
 {{ end }}
+
+{{ if .mathjax }}
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+{{ end }}
 {{ end }}
 
 {{ template "_internal/google_analytics_async.html" . }}
