@@ -1,7 +1,6 @@
 <section id="list-pane" class="row list">
   <ul >
-    {{ $paginator := .Paginate .Data.Pages }}
-    {{ range $paginator.Pages }}
+    {{ range .Data.Pages.ByPublishDate }}
     <li class="list-entry">
       <a class="list-entry-link" href="{{ .Permalink }}">{{ .Title }}</a>
       <p class="meta">
@@ -25,5 +24,4 @@
     </li>
     {{ end }}
   </ul>
-  {{ template "_internal/pagination.html" . }}
 </section>
