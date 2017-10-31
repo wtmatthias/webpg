@@ -14,6 +14,8 @@ title = "William Matthias"
 
 theme = "hugo-goa"
 
+paginate = 1 # set # of posts to show per pg
+
 ## Hugo Built-in Features
 disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
 # googleAnalytics = "XYZ"
