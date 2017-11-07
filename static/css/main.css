@@ -16,12 +16,11 @@ a:visited,
 a:link
 {
     text-decoration: none;
-
-    color: #526d7a;
+     color: #5A7171
 }
 body
 {
-    font-family: 'Roboto Slab', 'Roboto', 'Lato', sans-serif;
+    font-family: 'Open Sans', 'Oswald', 'Lato', sans-serif;
     font-size: 20px;
     font-weight: 400;
 
@@ -42,7 +41,9 @@ html
 }
 .author
 {
-    color: #444;
+    color: #05171E;
+    font-family: 'Rufina', serif;
+    font-size: 40px
 }
 .author h1,
 .author h2,
@@ -52,11 +53,11 @@ html
 .author h6,
 .author p
 {
-    font-family: 'Roboto Slab', serif;
+
 }
 .category
 {
-    color: #966 !important;
+    color: #7FA6B0 !important;
 }
 .container
 {
@@ -72,27 +73,27 @@ html
 }
 div.content
 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
 
-    color: #777;
+    color: #333;
 }
 .copyright
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 200;
 }
 .description
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 200;
-    color: #bbb;
+    color: #05171E;
 }
 .error
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 
     margin-top: 100px;
 }
@@ -100,28 +101,32 @@ div.content
 {
     font-size: 80px;
 
-    color: #bbb;
+    color: #676569;
 }
 .error p
 {
     margin-top: 150px;
 
-    color: #777;
+    color: #676569;
 }
 .excerpt
 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
-    font-weight: 200;
+    font-weight: 300;
 
-    color: #555;
+    color: #333;
     margin-bottom: 20px;
 }
 .footer
 {
     margin-top: 10px;
 
-    color: #bbb;
+    color: #676569;
+}
+div.footnotes
+{
+    font-size: 12px;
 }
 .header
 {
@@ -140,17 +145,18 @@ div.content
 }
 .intro
 {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 200;
-    color: #777;
+    font-family: 'Open Sans', serif;
+    font-weight: 400;
+    color: #05171E;
 }
 h3.intro
 {
-    margin-top: 0px
+    margin-top: 0px;
+    font-size: 22px
 }
 .list
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 
     margin-top: 50px;
 }
@@ -160,9 +166,9 @@ h3.intro
 }
 .list-entry
 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
 
     margin-top: 10px;
     margin-bottom: 20px;
@@ -170,6 +176,7 @@ h3.intro
 .list-entry-link
 {
     padding: 0;
+    color: #5A7171
 }
 .main-menu
 {
@@ -189,34 +196,34 @@ h3.intro
 
     text-decoration: none;
 
-    color: #966 !important;
+    color: #05171E !important;
 }
 .meta
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 200;
 
-    color: #bbb;
+    color: #333;
 }
 a.meta
 {
-    color: #966;
+    color: #7FA6B0;
 }
 h6.meta
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 200;
 
-    color: #bbb;
+    color: #676569;
 }
 section.meta {
     margin-top:
 }
 .powered
 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 300;
 }
@@ -227,14 +234,15 @@ section.meta {
 .social,
 .social a
 {
-    color: #526d7a;
+    color: #5A7171
+    ;
 }
 .title
 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: 400;
 
-    color: #555;
+    color: #05171E;
 }
 header.title
 {
@@ -250,30 +258,8 @@ header.title
     }
     .list
     {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Open Sans', sans-serif;
 
         margin-top: 30px;
     }
 }
-
-/* pagination */
-.pagination
-{
-    text-align: center;
-    display: inline;
-}
-.pagination a
-{
-    padding: 0 .2em;
-    color: #966;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    transition: background-color .3s;
-    border: 0px;
-}
-.pagination a.active
-{
-    background-color: #555;
-    color: white;
-}
-.pagination a:hover:not(.active) {background-color: #eee;}

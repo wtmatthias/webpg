@@ -1,0 +1,121 @@
+---
+title: '"Find and Replace" in Multiple Variable Names'
+slug: "find-replace-in-var-names"
+date: 2017-10-04
+comments: true
+draft: true
+categories: ["R"]
+tags: ["R", "tidyverse", "dplyr", "purrr"]
+
+showpagemeta: false
+---
+
+
+
+<p>Renaming a variable/set of variables or column names is fairly straightforward. And there are plenty of resources on The Google. If you’re familiar with the <code>dplyr</code> package in R, you’ve probably used <code>select()</code> and <code>rename()</code> a lot. What may not be as straight forward to a beginner or intermediate R user is how to rename a group of variables at the same time or “find and replace” a string of text in a group of variable names—as opposed to making the changes one by one.</p>
+<p>This issue has come up most frequently for me in 3 ways:</p>
+<ol style="list-style-type: decimal">
+<li><p>I download a dataset and a group of variables has a simlar “prefix” or “suffix” added to the variable name. E.g. <code>prefix_varname1</code>, <code>prefix_varname2</code> or <code>varname1_suffix</code>, <code>varname2_suffix</code>.</p></li>
+<li><p>I “collapse” or “summarise” whole or part of a dataset based on some common transformation, like a mean. And I get a new variable/column name like <code>varname1_mean</code>, <code>varname2_mean</code> as an end product.</p></li>
+<li><p>I join/merge two or more large datasets and there are identical variable names in those datasets, and I see something like <code>var1.x</code> or <code>var1.y</code></p></li>
+</ol>
+<p>Using just <code>select()</code> or <code>rename()</code> you can change these variable names one by one to another name. You might do something like this…</p>
+<pre class="r"><code>library(tidyverse)
+library(stringr)
+
+## CREATE THE FAKE DATA
+df &lt;- tribble(
+  ~prefix_x, ~prefix_y, ~prefix_z, # column names
+#-----------|---------|---------|
+  &quot;country1&quot;,   100,    1,         # values in each column
+  &quot;country2&quot;,   500,    2
+)
+
+df</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##   prefix_x prefix_y prefix_z
+##      &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1 country1      100        1
+## 2 country2      500        2</code></pre>
+<pre class="r"><code>## RENAME YOUR VARIABLES
+df %&gt;%
+  rename(x = prefix_x,
+         y = prefix_y,
+         z = prefix_z
+         )</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##          x     y     z
+##      &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 country1   100     1
+## 2 country2   500     2</code></pre>
+<p>This is a perfectly good solution. Nothing wrong with using simple tools! This gets time consuming though if you have a lot of variables.</p>
+<p>If you’re a beginner, or even intermediate, you may not have read the <code>dplyr</code> documentation thoroughly because there’s so much to consume already 😧. But, if you glanced at it you might have noticed a reference to the “scoped” variants of <code>select()</code> or <code>rename()</code>— namely, <code>select_all</code>, <code>select_if</code>, <code>select_at</code>, <code>rename_all</code>, <code>rename_if</code>, <code>rename_at</code>. In R, type <code>?select</code> and you’ll see what I’m talking about. These functions are designed to tackle our problem, but I remember there being a bit of a hurdle to understand how to actually use them.</p>
+<p>There are <strong>many</strong> ways to solve this problem, and I’ve included a few examples of how to do this because one way might be easier for you to remember than another. I repeat…there are many!</p>
+<div id="solution-1" class="section level3">
+<h3>Solution 1</h3>
+<p>Initially, I found this example to be easiest to remember because it didn’t require knowledge of something like “quosure” or <code>purrr</code>. First, we’ll create the data frame. Second, we’ll “find and replace”/delete a string of text in the variable name using a <code>stringr</code> package function <code>str_replace_all</code>. This package and it’s many functions are the <code>tidyverse</code> way to use regex <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> for string/text manipulation.</p>
+<pre class="r"><code>## FAKE DATA
+df2 &lt;- tribble(
+  ~x_mean, ~y_mean, ~z_mean,  # column names
+  #------|---------|-------|
+   2.5,    100,     1,        # values in each column
+   5,      500,     0.5
+)
+
+df2</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##   x_mean y_mean z_mean
+##    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1    2.5    100    1.0
+## 2    5.0    500    0.5</code></pre>
+<pre class="r"><code>## RENAME THE VARS BY TAKING OUT &quot;_mean&quot;
+df2 %&gt;%
+  dplyr::rename_all(
+    funs(stringr::str_replace_all(., &quot;_mean&quot;, &quot;&quot;))
+    )</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##       x     y     z
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1   2.5   100   1.0
+## 2   5.0   500   0.5</code></pre>
+<p>I’ll explain really quickly what a few parts of the code do because it might help you remember how to write it in the future. <code>.</code> in <code>str_replace_all()</code> is a place holder of sorts for the data frame object, <code>df2</code>, we already created. The next argument in the function is the pattern we want to find in the variable name, i.e. <code>&quot;_mean&quot;</code>. The last argument, is what we want to replace it with. In this case we just want to “delete” the variable names’ suffix.</p>
+<p><code>funs()</code> is one way to call an outside tool/function in the “scoped” <code>dplyr</code> functions, and add some expression inside of that called tool/function.</p>
+</div>
+<div id="solution-2" class="section level3">
+<h3>Solution 2</h3>
+<pre class="r"><code>## RENAME THE VARS BY TAKING OUT &quot;_mean&quot;
+df2 %&gt;%
+  dplyr::rename_all(
+    ~stringr::str_replace_all(., &quot;_mean&quot;, &quot;&quot;)
+    )</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##       x     y     z
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1   2.5   100   1.0
+## 2   5.0   500   0.5</code></pre>
+<p>This example uses purrr-style notation. You can read more about it in the <code>purrr</code> documentation.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+</div>
+<div id="solution-3" class="section level3">
+<h3>Solution 3</h3>
+<pre class="r"><code>library(purrr)
+# or... `library(tidyverse)` if you loaded that already
+
+## RENAME THE VARS BY TAKING OUT &quot;_mean&quot;
+df2 %&gt;%
+  set_names(~stringr::str_replace_all(., &quot;_mean&quot;, &quot;&quot;)
+            )</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##       x     y     z
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1   2.5   100   1.0
+## 2   5.0   500   0.5</code></pre>
+<p>This uses the <code>set_names</code> function in <code>purrr</code>.</p>
+<p>Like I mentioned above, there are a lot of different tools out there to do this. Instead of using the <code>stringr</code> package and functions, you might like using base R’s <code>grep</code> functions. Those would work here too by just substituting them for <code>stringr::str_replace_all</code>.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>“regular expressions”<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>useful sites for reading more if unfamiliar: <a href="http://purrr.tidyverse.org">RStudio’s purrr intro</a> and <a href="https://jennybc.github.io/purrr-tutorial/">“jennybc”’s purrr tutorial</a><a href="#fnref2">↩</a></p></li>
+</ol>
+</div>

@@ -16,18 +16,24 @@ theme = "hugo-goa"
 
 
 ## Hugo Built-in Features
-disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
+disqusShortname = "billymatthias" # Comment out to disable Disqus.
 # googleAnalytics = "XYZ"
 enableRobotsTXT = true
 enableEmoji = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+## permanent links to blog posts
+[permalinks]
+post = "/:year/:month/:day/:slug/"
 
 ## Site Settings
 [params]
 author = "William Matthias"
-intro = "Data. Politics & Development. Sports. Photography"
-#description = "Data . Previously @Hacker Hostel, @Bachmanity and @Aviato.<br/> \"What is F times 5? It's Fleventy-five.\""
+intro = "PhD Student at UT-Austin"
+description = "Data. Politics & Development. Sports."
 authorimage = "profile.jpg"
 dateformat = "Jan 2, 2006"
+
 
 ## Site Meta Settings
 [params.meta]
@@ -49,7 +55,8 @@ email = "b.matthias@utexas.edu"
 [params.extra]
 copyright = "© 2017. William Matthias. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)."
 poweredby = true
-highlightjs = true
+highlightjs = true # use highlight.js
+highlightjsstyle = "atelier-forest-light" #highlight.js style
 mathjax = true # Add to "footer.html". Not part of orig 'goa' theme
 
 ## Main Menu

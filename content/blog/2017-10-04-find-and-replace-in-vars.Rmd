@@ -1,0 +1,121 @@
+---
+title: '"Find and Replace" in Multiple Variable Names'
+slug: "find-replace-in-var-names"
+date: 2017-10-04
+comments: true
+draft: true
+categories: ["R"]
+tags: ["R", "tidyverse", "dplyr", "purrr"]
+
+showpagemeta: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(blogdown)
+library(emo)
+```
+
+
+Renaming a variable/set of variables or column names is fairly straightforward. And there are plenty of resources on The Google. If you're familiar with the `dplyr` package in R, you've probably used `select()` and `rename()` a lot. What may not be as straight forward to a beginner or intermediate R user is how to rename a group of variables at the same time or "find and replace" a string of text in a group of variable names---as opposed to making the changes one by one.
+
+This issue has come up most frequently for me in 3 ways:
+
+1. I download a dataset and a group of variables has a simlar "prefix" or "suffix" added to the variable name. E.g. `prefix_varname1`, `prefix_varname2` or `varname1_suffix`, `varname2_suffix`.
+
+2. I "collapse" or "summarise" whole or part of a dataset based on some common transformation, like a mean. And I get a new variable/column name like `varname1_mean`, `varname2_mean` as an end product.
+
+3. I join/merge two or more large datasets and there are identical variable names in those datasets, and I see something like `var1.x` or `var1.y`
+
+Using just `select()` or `rename()` you can change these variable names one by one to another name. You might do something like this...
+
+
+```{r the-problem, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(stringr)
+
+## CREATE THE FAKE DATA
+df <- tribble(
+  ~prefix_x, ~prefix_y, ~prefix_z, # column names
+#-----------|---------|---------|
+  "country1",   100,    1,         # values in each column
+  "country2",   500,    2
+)
+
+df
+
+## RENAME YOUR VARIABLES
+df %>%
+  rename(x = prefix_x,
+         y = prefix_y,
+         z = prefix_z
+         )
+```
+
+
+This is a perfectly good solution. Nothing wrong with using simple tools! This gets time consuming though if you have a lot of variables.
+
+If you're a beginner, or even intermediate, you may not have read the `dplyr` documentation thoroughly because there's so much to consume already `r emo::ji("anguished")`. But, if you glanced at it you might have noticed a reference to the "scoped" variants of `select()` or `rename()`--- namely, `select_all`, `select_if`, `select_at`, `rename_all`, `rename_if`, `rename_at`. In R, type `?select` and you'll see what I'm talking about. These functions are designed to tackle our problem, but I remember there being a bit of a hurdle to understand how to actually use them.
+
+There are **many** ways to solve this problem, and I've included a few examples of how to do this because one way might be easier for you to remember than another. I repeat...there are many!
+
+
+
+### Solution 1
+
+Initially, I found this example to be easiest to remember because it didn't require knowledge of something like "quosure" or `purrr`. First, we'll create the data frame. Second, we'll "find and replace"/delete a string of text in the variable name using a `stringr` package function `str_replace_all`. This package and it's many functions are the `tidyverse` way to use regex [^1] for string/text manipulation.
+
+[^1]: "regular expressions"
+
+```{r solution1, warning=FALSE, message=FALSE}
+## FAKE DATA
+df2 <- tribble(
+  ~x_mean, ~y_mean, ~z_mean,  # column names
+  #------|---------|-------|
+   2.5,    100,     1,        # values in each column
+   5,      500,     0.5
+)
+
+df2
+
+## RENAME THE VARS BY TAKING OUT "_mean"
+df2 %>%
+  dplyr::rename_all(
+    funs(stringr::str_replace_all(., "_mean", ""))
+    )
+```
+
+I'll explain really quickly what a few parts of the code do because it might help you remember how to write it in the future. `.` in `str_replace_all()` is a place holder of sorts for the data frame object, `df2`, we already created. The next argument in the function is the pattern we want to find in the variable name, i.e. `"_mean"`. The last argument, is what we want to replace it with. In this case we just want to "delete" the variable names' suffix.
+
+`funs()` is one way to call an outside tool/function in the "scoped" `dplyr` functions, and add some expression inside of that called tool/function.
+
+
+
+### Solution 2
+```{r solution2, warning=FALSE, message=FALSE}
+## RENAME THE VARS BY TAKING OUT "_mean"
+df2 %>%
+  dplyr::rename_all(
+    ~stringr::str_replace_all(., "_mean", "")
+    )
+```
+This example uses purrr-style notation. You can read more about it in the `purrr` documentation.[^2]
+
+
+[^2]: useful sites for reading more if unfamiliar: [RStudio's purrr intro](http://purrr.tidyverse.org) and ["jennybc"'s purrr tutorial](https://jennybc.github.io/purrr-tutorial/)
+
+
+### Solution 3
+```{r solution3, warning=FALSE, message=FALSE}
+library(purrr)
+# or... `library(tidyverse)` if you loaded that already
+
+## RENAME THE VARS BY TAKING OUT "_mean"
+df2 %>%
+  set_names(~stringr::str_replace_all(., "_mean", "")
+            )
+```
+This uses the `set_names` function in `purrr`.
+
+Like I mentioned above, there are a lot of different tools out there to do this. Instead of using the `stringr` package and functions, you might like using base R's `grep` functions. Those would work here too by just substituting them for `stringr::str_replace_all`.
