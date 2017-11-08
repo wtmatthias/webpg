@@ -4,19 +4,18 @@ baseurl = "https://wtmatthias.com/"
 builddrafts = false
 canonifyurls = false
 languageCode = "en-US"
-
 contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
-
 author = "William Matthias"
 title = "William Matthias"
-
 theme = "hugo-goa"
+footnotereturnlinkcontents = "↩"
+
 
 
 ## Hugo Built-in Features
-disqusShortname = "billymatthias" # Comment out to disable Disqus.
+disqusShortname = "https-www-wtmatthias-com" # Comment out to disable Disqus.
 # googleAnalytics = "XYZ"
 enableRobotsTXT = true
 enableEmoji = true
@@ -24,7 +23,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 ## permanent links to blog posts
 [permalinks]
-post = "/:year/:month/:day/:slug/"
+blog = "/:year/:month/:day/:slug/"
+about = "/:slug/"
 
 ## Site Settings
 [params]
@@ -42,10 +42,10 @@ keywords = "politics,sports,development,conflict,R,Python,baseketball,sixers"
 
 ## Social Accounts
 [params.social]
-github = "<wtmatthias>"
-instagram = "<wtmatthias>"
-linkedin = "<william-matthias-668b1471>"
-twitter = "<wtmatthias>"
+github = "wtmatthias"
+instagram = "wtmatthias"
+linkedin = "william-matthias-668b1471"
+twitter = "wtmatthias"
 # facebook = "<username>"
 # google = "<username>"
 # stackoverflow = "<username>"

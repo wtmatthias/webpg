@@ -3,27 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wtmatthias.com/about/</loc>
+    <lastmod>2017-11-08T01:59:47-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wtmatthias.com/2017/10/04/find-replace-in-var-names/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wtmatthias.com/coderag/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wtmatthias.com/tags/about/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://wtmatthias.com/categories/about/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://wtmatthias.com/about/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://wtmatthias.com/about/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -45,6 +36,12 @@
   </url>
   
   <url>
+    <loc>https://wtmatthias.com/blog/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wtmatthias.com/categories/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
@@ -57,8 +54,32 @@
   </url>
   
   <url>
+    <loc>https://wtmatthias.com/tags/dplyr/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wtmatthias.com/tags/pied-piper/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wtmatthias.com/tags/purrr/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wtmatthias.com/tags/r/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wtmatthias.com/categories/r/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -70,7 +91,7 @@
   
   <url>
     <loc>https://wtmatthias.com/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

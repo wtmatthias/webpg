@@ -5,9 +5,10 @@ date: 2017-10-04
 comments: true
 draft: true
 categories: ["R"]
-tags: ["R", "tidyverse", "dplyr", "purrr"]
+tags: ["R", "dplyr", "purrr"]
 
 showpagemeta: false
+showcomments: true
 ---
 
 ```{r setup, include=FALSE}

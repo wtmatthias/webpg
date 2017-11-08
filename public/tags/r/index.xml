@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>William Matthias</title>
-    <link>https://wtmatthias.com/</link>
-    <description>Recent content on William Matthias</description>
+    <title>R on William Matthias</title>
+    <link>https://wtmatthias.com/tags/r/</link>
+    <description>Recent content in R on William Matthias</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://wtmatthias.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wtmatthias.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>https://wtmatthias.com/2017/10/04/find-replace-in-var-names/</guid>
       <description>Renaming a variable/set of variables or column names is fairly straightforward. And there are plenty of resources on The Google. If you’re familiar with the dplyr package in R, you’ve probably used select() and rename() a lot. What may not be as straight forward to a beginner or intermediate R user is how to rename a group of variables at the same time or “find and replace” a string of text in a group of variable names—as opposed to making the changes one by one.</description>
-    </item>
-    
-    <item>
-      <title>CodeRag</title>
-      <link>https://wtmatthias.com/coderag/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://wtmatthias.com/coderag/</guid>
-      <description>Notes: This article originally appeared in CodeRag.
-Code/Rag has always been more than just another online tech blog. We strive to be part of the tech community—serving an essential, fundamental look at what’s going on in the valley. It’s why our tagline is “Know Your Code.” We think a tech news publication should know the basics. Be the source. Get down to brass tacks. We can do that because we’re part of the very ecosystem we’re reporting on.</description>
     </item>
     
   </channel>
